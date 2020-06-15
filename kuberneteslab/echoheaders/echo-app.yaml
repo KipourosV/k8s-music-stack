@@ -5,7 +5,7 @@ metadata:
   labels:
     app: echoheaders
   annotations: 
-    external-dns.alpha.kubernetes.io/hostname: echo.conga.mars64.io
+    external-dns.alpha.kubernetes.io/hostname: echo.$CLUSTERNAME
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
 spec:
   type: NodePort
@@ -18,7 +18,7 @@ spec:
     app: echoheaders
   type: LoadBalancer
   loadBalancerSourceRanges:
-  - 73.14.68.176/32
+  - <YOUR.PUBLIC.IP.HERE>/32
 ---
 apiVersion: v1
 kind: ReplicationController
